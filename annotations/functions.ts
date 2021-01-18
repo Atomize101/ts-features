@@ -57,5 +57,4 @@ const oldLogWeather = ({date, weather}) => {
     console.log(weather)
 }
 */
-
 logWeather(todaysWeather);

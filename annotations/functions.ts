@@ -37,6 +37,25 @@ const newThrowError = (message: string): string => {
 	if (!message) {
 		throw new Error(message);
 	}
-
 	return message;
 };
+
+const todaysWeather = {
+	date: new Date(),
+	weather: 'sunny',
+};
+
+// Typescript destructuring
+const logWeather = ({ date, weather }: { date: Date; weather: string }): void => {
+	console.log(date);
+	console.log(weather);
+};
+
+/*   ES2015 
+const oldLogWeather = ({date, weather}) => {
+    console.log(date)
+    console.log(weather)
+}
+*/
+
+logWeather(todaysWeather);

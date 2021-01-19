@@ -1,21 +1,20 @@
-interface Vehicle {
-	name: string;
-	year: number;
-	broken: boolean;
+interface Reportable {
+	summary(): string;
 }
 
 const oldCivic = {
 	name: 'civic',
-	year: 2000,
-	isBroken: true,
+	year: new Date(),
+	broken: true,
+	summary(): string {
+		return `Name: ${this.name}`;
+	},
 };
 
 // Now with the interface setup, if any of the values in oldCivic are changed, typescript will warn us
 
-const printVehicle = (vehicle: Vehicle): void => {
-	console.log(`Name: ${vehicle.name}`);
-	console.log(`Year: ${vehicle.year}`);
-	console.log(`Broken? ${vehicle.name}`);
+const printSummary = (item: Reportable): void => {
+	console.log(item.summary());
 };
 
-printVehicle(oldCivic);
+printSummary(oldCivic);

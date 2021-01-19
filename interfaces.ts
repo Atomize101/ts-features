@@ -11,6 +11,15 @@ const oldCivic = {
 	},
 };
 
+const drink = {
+	color: 'brown',
+	carbonated: 'true',
+	sugar: 40,
+	summary(): string {
+		return `My drink is has ${this.sugar} grams of sugar`;
+	},
+};
+
 // Now with the interface setup, if any of the values in oldCivic are changed, typescript will warn us
 
 const printSummary = (item: Reportable): void => {
@@ -18,3 +27,8 @@ const printSummary = (item: Reportable): void => {
 };
 
 printSummary(oldCivic);
+
+// Notice there are no errors when passing the drink object
+// We can use an single interface to describe the shape or the different properties of very different objects.
+// This encourages to make more generic and reusable functions
+printSummary(drink);

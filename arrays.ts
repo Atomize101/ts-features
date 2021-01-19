@@ -21,3 +21,13 @@ carMakers.push(100);
 carMakers.map((car: string): string => {
 	return car.toUpperCase();
 });
+
+// Flexible types
+const importantDates: (Date | string)[] = [new Date(), '2030-10-10'];
+
+importantDates.push('2030-10-10');
+importantDates.push(new Date());
+importantDates.push(20); // Can see that trying to push the number, typescript warns us that this will not work.
+
+// When to use typed arrays?
+// Any time we need to represent a collection of records with some arbitrary sort order.
